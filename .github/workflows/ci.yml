@@ -81,7 +81,7 @@ jobs:
           make -j$(nproc) IGNORE_ERRORS=1
 
       - name: Upload bin to artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@main
         with:
           name: bin-ipq50xx-arm
           path: bin/targets/ipq50xx/arm/*
@@ -99,7 +99,7 @@ jobs:
       contents: write
     steps:
       - name: Checkout gh-pages
-        uses: actions/checkout@v3
+        uses: actions/checkout@main
         with:
           path: 'gh-pages'
           ref: 'gh-pages'
@@ -121,7 +121,7 @@ jobs:
           git rebase --continue
 
       - name: Download bin from artifacts
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@main
         with:
           name: bin-ipq50xx-arm
           path: bin/
@@ -159,7 +159,7 @@ jobs:
           path: dl/
 
       - name: Download bin from artifacts
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@main
         with:
           name: bin-ipq50xx-arm
           path: bin/targets/ipq50xx/arm/
