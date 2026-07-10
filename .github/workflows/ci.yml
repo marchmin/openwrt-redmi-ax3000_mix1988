@@ -21,7 +21,7 @@ jobs:
             coccinelle
 
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@main
 
       - name: Hook the openwrt_core URL for opkg
         run: |
